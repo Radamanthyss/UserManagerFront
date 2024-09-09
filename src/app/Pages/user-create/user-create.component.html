@@ -1,0 +1,90 @@
+<div>
+  <div class="container mt-5">
+    <mat-card appearance="raised" color="primary">
+
+      <mat-card-header>
+
+        <mat-card-title>
+          <h2>Add Usuário</h2>
+        </mat-card-title>
+
+      </mat-card-header>
+
+      <mat-card-actions align="end">
+        <button mat-raised-button routerLink='/' color="accent">Voltar</button>
+      </mat-card-actions>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content>
+        <div *ngIf="isLoading; else elseForm">
+          <app-loader :title=" loadingTitle" />
+        </div>
+        <ng-template #elseForm>
+          <form (ngSubmit)="saveUser()">
+
+            <div class="mb-3">
+              <label for="name">Nome</label>
+              <input type="text" [(ngModel)]="name" name="name" id="" class="form-control" />
+              <span *ngIf="errors.name" class="text-danger">{{ errors.name }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="cpf">CPF</label>
+              <input type="text" [(ngModel)]="cpf" name="cpf" id="" class="form-control" />
+              <span *ngIf="errors.cpf" class="text-danger">{{ errors.cpf }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="data_nascimento">Nascimento</label>
+              <input type="date" [(ngModel)]="data_nascimento" name="data_nascimento" id="" class="form-control" />
+              <span *ngIf="errors.data_nascimento" class="text-danger">{{ errors.data_nascimento }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="password">Senha</label>
+              <input type="text" [(ngModel)]="password" name="password" id="" class="form-control" />
+              <span *ngIf="errors.password" class="text-danger">{{ errors.password }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input type="email" [(ngModel)]="email" name="email" id="" class="form-control" />
+              <span *ngIf="errors.email" class="text-danger">{{ errors.email }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="telefone">Telefone</label>
+              <input type="text" [(ngModel)]="telefone" name="telefone" id="" class="form-control" />
+              <span *ngIf="errors.telefone" class="text-danger">{{ errors.telefone }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="cep">CEP</label>
+              <input type="text" [(ngModel)]="cep" name="cep" id="" class="form-control" />
+              <span *ngIf="errors.cep" class="text-danger">{{ errors.cep }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="estado">Estado</label>
+              <input type="text" [(ngModel)]="estado" name="estado" id="" class="form-control" />
+              <span *ngIf="errors.estado" class="text-danger">{{ errors.estado }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="cidade">Cidade</label>
+              <input type="text" [(ngModel)]="cidade" name="cidade" id="" class="form-control" />
+              <span *ngIf="errors.cidade" class="text-danger">{{ errors.cidade }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="bairro">Bairro</label>
+              <input type="text" [(ngModel)]="bairro" name="bairro" id="" class="form-control" />
+              <span *ngIf="errors.bairro" class="text-danger">{{ errors.bairro }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="endereco">Endereço</label>
+              <input type="text" [(ngModel)]="endereco" name="endereco" id="" class="form-control" />
+              <span *ngIf="errors.endereco" class="text-danger">{{ errors.endereco }}</span>
+            </div>
+            <div class="mb-3">
+              <button type="submit" mat-raised-button color="primary">Salvar</button>
+            </div>
+          </form>
+        </ng-template>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>
